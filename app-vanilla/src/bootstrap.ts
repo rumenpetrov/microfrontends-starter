@@ -12,9 +12,9 @@ export const bootstrap = (rootElement: HTMLDivElement) => {
   <div>
     <div>
       <p><a href="/app-vanilla">Go to App vanilla page</a></p>
-      <button type="button" onclick="this.nextElementSibling.showModal()">Click me</button>
+      <button type="button" onclick="this.nextElementSibling.showModal()">Say hello</button>
       <dialog id="dialog" style="border-color: lime; width: 60vw;">
-        <p>Greetings from within App vanilla!</p>
+        <p>Greetings from within app-vanilla!</p>
         <form method="dialog">
           <button>OK</button>
         </form>
