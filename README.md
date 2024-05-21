@@ -27,3 +27,17 @@ $ npm run preview
 * [URL ESM imports](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#importing_modules_using_import_maps) in the host - Helps with loading remote ES modules
 * App as [ESM export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#exporting_module_features) (bundled as a Library) using [Vite](https://vitejs.dev/)
 * [esm.sh](https://esm.sh/) CDN for the shared dependencies
+
+### Key points to prepare MFE application
+* Bundle to ESM (as library)
+* Host the child application with CORS origin set to the host application URL
+* Use static port which is inline with the host setup and don't conflict with other embedded apps
+* Define shared packages as peerDependencies and copy them to devDependencies as well
+* Use absolute URLs for linking static assets
+* Each application has reserved element in host where it will be running. The selector for this element is used to add a Shadow DOM and to know where to insert styles
+* Element selector/ID from the host should be provided to the embedded application for using in the import styles script (build setup)
+  * E.g. `data-embedded-app-name="app-react"`, `#app-react`
+  * Vite Plugin and custom setup is used for inserting the remote styles in the host Shadow DOM
+* Each application should export bootstrap function which takes care initialization
+* Each application should limit its interactions with `document`, `body` or `window` because it is going to be placed in a Shadow DOM
+* Each application should limit the styles it puts on `html` and `body` because it is going to be placed in a Shadow DOM
