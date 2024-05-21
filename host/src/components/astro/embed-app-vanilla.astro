@@ -1,0 +1,32 @@
+---
+const { id } = Astro.props;
+const idSelctor = `#${id}`;
+const embedName = 'app-vanilla';
+---
+
+<div class="embed">
+  <p class="embed-name">Embedded app name: {embedName}</p>
+
+  <div class="embed-host" id={id} data-embedded-app-name={embedName}>
+    <p class="embed-issue">Not available</p>
+  </div>
+</div>
+
+<script type="module" is:inline define:vars={{ embedName, idSelctor }}>
+  // import { bootstrap } from 'http://localhost:9100/bundle.js';
+  import { bootstrap } from 'app-vanilla';
+
+  if (typeof bootstrap === 'function') {
+    const embedElement = document.querySelector(idSelctor);
+
+    if (embedElement) {
+      const embedShadowRoot = embedElement.attachShadow({ mode: "open" });
+
+      bootstrap(embedShadowRoot);
+    } else {
+      console.warn(`[${embedName}] (${idSelctor}) Embed element is missing.`);
+    }
+  } else {
+    console.warn(`[${embedName}] (${idSelctor}) There is a problem with initializing the application.`);
+  }
+</script>
