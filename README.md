@@ -1,7 +1,7 @@
 # microfrontends-starter
 Explore alternatives to iframes when embedding applications in another application which serves as a host for the rest.
 
-In order to provide more features and functionalities some large applications allow extending them in form of a extensions, plugins, integrations or modules. Often these are just external applications embedded in the host application using iframes. This approach is widely used but it has his pros and cons. We are starting to get some, arguably, better alternatives when using modern technologies. Find more about the problem and the suggested solution on [this](https://github.com/rumenpetrov/microfrontends-starter/wiki/Embedded-and-encapsulated-application-alternative-to-ifames-proposal) page.
+In order to provide more features and functionalities, some large applications allow extending them in form of an extensions, plugins, integrations or modules. Often these are just external applications embedded in the host application using iframes. This approach is widely used but it has his pros and cons. We are starting to get some, arguably, better alternatives when using modern technologies. Find more about the problem and the suggested solution on [this](https://github.com/rumenpetrov/microfrontends-starter/wiki/Embedded-and-encapsulated-application-alternative-to-ifames-proposal) page.
 
 ### Project structure
 
