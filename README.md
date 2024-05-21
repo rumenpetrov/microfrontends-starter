@@ -4,7 +4,7 @@ Explore alternatives to iframes when embedding applications in another applicati
 In order to provide more features and functionalities, some large applications allow extending them in form of an extensions, plugins, integrations or modules. Often these are just external applications embedded in the host application using iframes. This approach is widely used but it has his pros and cons. We are starting to get some, arguably, better alternatives when using modern technologies. Find more about the problem and the suggested solution on [this](https://github.com/rumenpetrov/microfrontends-starter/wiki/Embedded-and-encapsulated-application-alternative-to-ifames-proposal) page.
 
 ### Project structure
-The host and all embedded application are placed at the root directory of the project for ease of use but each of them could have separate repository and has his own build setup.
+The host and all embedded applications are placed at the root directory of the project for ease of use but each of them could have separate repository and has his own build setup.
 
 ### How to run application
 Every application have to build and served separately, if you want everything to work together.
