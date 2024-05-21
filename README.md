@@ -41,3 +41,14 @@ $ npm run preview
 * Each application should export bootstrap function which takes care initialization
 * Each application should limit its interactions with `document`, `body` or `window` because it is going to be placed in a Shadow DOM
 * Each application should limit the styles it puts on `html` and `body` because it is going to be placed in a Shadow DOM
+
+### Refs:
+[YOU MIGHT NOT NEED MODULE FEDERATION (importmaps)](https://www.mercedes-benz.io/blog/2023-01-05-you-might-not-need-module-federation-orchestrate-your-microfrontends-at-runtime-with-import-maps)
+[MFEs with Astro](https://medium.com/@sergio.a.soria/setting-up-micro-frontends-with-astro-and-ecma-script-modules-137340d2c520)
+[Shadow DOM only approach article](https://medium.com/bbc-product-technology/goodbye-iframes-6c84a651e137)
+[NX](https://nx.dev/)
+[Wrap elements with Shadow DOM](https://css-tricks.com/playing-shadow-dom/)
+[Everything You Need to Know About Import Maps](https://www.honeybadger.io/blog/import-maps/)
+[Bundle setup](https://dev.to/receter/how-to-create-a-react-component-library-using-vites-library-mode-4lma)
+[Vite bundle](https://vitejs.dev/guide/build)
+[Shadow DOM portals concept](https://dev.to/westbrook/your-content-in-shadow-dom-portals-3cdb)
