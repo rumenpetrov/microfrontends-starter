@@ -19,7 +19,7 @@ const App = () => {
         <h1>Remote React v{React.version}</h1>
 
         <div>
-          <p><a href="/app-react">Go to App vanilla page</a></p>
+          <p><a href="/app-react">Go to app-react page</a></p>
 
           <button type="button" onClick={handleClick}>Say hello</button>
 

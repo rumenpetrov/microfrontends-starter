@@ -11,7 +11,7 @@ export const bootstrap = (rootElement: HTMLDivElement) => {
   rootElementApp!.innerHTML = `
   <div>
     <div>
-      <p><a href="/app-vanilla">Go to App vanilla page</a></p>
+      <p><a href="/app-vanilla">Go to app-vanilla page</a></p>
       <button type="button" onclick="this.nextElementSibling.showModal()">Say hello</button>
       <dialog id="dialog" style="border-color: lime; width: 60vw;">
         <p>Greetings from within app-vanilla!</p>
