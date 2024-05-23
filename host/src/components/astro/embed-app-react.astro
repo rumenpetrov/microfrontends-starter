@@ -7,10 +7,22 @@ const embedName = 'app-react';
 <div class="embed">
   <p class="embed-name">Embedded app name: {embedName}</p>
 
-  <div class="embed-host" id={id} data-embedded-app-name={embedName}>
+  <div class="embed-host" id={id} data-embedded-app-name={embedName} inert>
     <p class="embed-issue">Not available</p>
   </div>
 </div>
+
+<style>
+  .embed-host {
+    transition: all 0.5s ease-in-out;
+    transform-origin: center top;
+  }
+  .embed-host[inert] {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale3d(1, 0.5, 1);
+  }
+</style>
 
 <script type="module" is:inline define:vars={{ embedName, idSelctor, basename }}>
 // import { bootstrap } from 'http://localhost:9200/bundle.js';
@@ -23,6 +35,10 @@ const embedName = 'app-react';
       const embedShadowRoot = embedElement.attachShadow({ mode: "open" });
 
       bootstrap(embedShadowRoot, basename);
+
+      embedShadowRoot.addEventListener('embed-styles-loaded', (event) => {
+        embedElement.inert = false;
+      })
     } else {
       console.warn(`[${embedName}] (${idSelctor}) Embed element is missing.`);
     }

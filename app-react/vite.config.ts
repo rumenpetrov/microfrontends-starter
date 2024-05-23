@@ -34,12 +34,14 @@ export default defineConfig({
 
 function injectCodeFunction(cssCode: string, options: InjectCodeOptions) {
   try {
+    const embedName = 'app-react';
+
     if (typeof document == 'undefined' || document.readyState !== 'complete') {
       setTimeout(() => injectCodeFunction(cssCode, options), 10);
       return undefined;
     }
 
-    const hostElementList = document.querySelectorAll('[data-embedded-app-name="app-react"]');
+    const hostElementList = document.querySelectorAll(`[data-embedded-app-name="${embedName}"]`);
 
     if (!hostElementList || hostElementList.length < 1) {
       return undefined;
@@ -52,6 +54,17 @@ function injectCodeFunction(cssCode: string, options: InjectCodeOptions) {
 
       if (rootElement) {
         rootElement.adoptedStyleSheets = [sheet];
+
+        // Create a new event
+        const customEvent = new CustomEvent('embed-styles-loaded', {
+          bubbles: false,
+          composed: false,
+          detail: {
+            embedName,
+          }
+        });
+
+        rootElement.dispatchEvent(customEvent);
       } else {
         throw new Error('Missing rootElement.');
       }
