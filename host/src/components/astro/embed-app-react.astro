@@ -1,5 +1,5 @@
 ---
-const { id } = Astro.props;
+const { id, basename } = Astro.props;
 const idSelctor = `#${id}`;
 const embedName = 'app-react';
 ---
@@ -12,7 +12,7 @@ const embedName = 'app-react';
   </div>
 </div>
 
-<script type="module" is:inline define:vars={{ embedName, idSelctor }}>
+<script type="module" is:inline define:vars={{ embedName, idSelctor, basename }}>
 // import { bootstrap } from 'http://localhost:9200/bundle.js';
   import { bootstrap } from 'app-react';
 
@@ -22,7 +22,7 @@ const embedName = 'app-react';
     if (embedElement) {
       const embedShadowRoot = embedElement.attachShadow({ mode: "open" });
 
-      bootstrap(embedShadowRoot);
+      bootstrap(embedShadowRoot, basename);
     } else {
       console.warn(`[${embedName}] (${idSelctor}) Embed element is missing.`);
     }
