@@ -1,57 +1,23 @@
 import React from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from 'react-router-dom';
+import routes from './routes'
 import './App.css'
 
-const App = () => {
-  const [count, setCount] = React.useState(0)
-  const ref = React.useRef<HTMLDialogElement>(null)
+type Props = {
+  basename?: string;
+}
 
-  const handleClick = () => {
-    if (ref.current) {
-      ref.current.showModal();
-    }
-  }
+const App = ({ basename }: Props) => {
+  const router = React.useMemo(() => createBrowserRouter(routes, { basename }), [basename]);
 
   return (
     <div>
-      <div style={{ marginBottom: '50px'}}>
-        <h1>Remote React v{React.version}</h1>
+      <p><strong>Basename:</strong> {basename || 'Not set'}</p>
 
-        <div>
-          <p><a href="/app-react">Go to app-react page</a></p>
-
-          <button type="button" onClick={handleClick}>Say hello</button>
-
-          <dialog ref={ref} style={{ borderColor: 'lime', width: '60vw' }}>
-            <p>Greetings from within app-react!</p>
-            <form method="dialog">
-              <button>OK</button>
-            </form>
-          </dialog>
-        </div>
-      </div>
-
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={new URL(viteLogo, import.meta.url).href} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={new URL(reactLogo, import.meta.url).href} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <RouterProvider router={router} />
     </div>
   )
 }
