@@ -36,7 +36,7 @@ const embedName = 'app-react';
 
       bootstrap(embedShadowRoot, basename);
 
-      embedShadowRoot.addEventListener('embed-styles-loaded', (event) => {
+      embedShadowRoot.addEventListener('embed-styles-loaded', () => {
         embedElement.inert = false;
       })
     } else {

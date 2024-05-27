@@ -1,5 +1,6 @@
 ---
 const { title } = Astro.props;
+import CounterPreview from '../components/react/counter-preview.tsx'
 ---
 
 <html lang="en">
@@ -13,9 +14,10 @@ const { title } = Astro.props;
 		<script type="importmap" is:inline>
 			{
 				"imports": {
-					"react": "https://esm.sh/react",
-					"react-dom": "https://esm.sh/react-dom",
-					"react-dom/": "https://esm.sh/react-dom/",
+					"nanostores": "https://esm.sh/nanostores@0.10.3",
+					"react": "https://esm.sh/react@18.3.1",
+					"react-dom": "https://esm.sh/react-dom@18.3.1",
+					"react-dom/": "https://esm.sh/react-dom@18.3.1/",
 					"app-vanilla": "http://localhost:9100/bundle.js",
 					"app-react": "http://localhost:9200/bundle.js"
 				},
@@ -70,6 +72,8 @@ const { title } = Astro.props;
         <a href="/about">About</a>
         <a href="/extensions">Extensions</a>
       </nav>
+
+			<CounterPreview client:only="react" />
     </header>
 
 		<h1>{title}</h1>

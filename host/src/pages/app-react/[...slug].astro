@@ -31,3 +31,9 @@ export function getStaticPaths() {
 		gap: 8px;
 	}
 </style>
+
+<script type="module" is:inline>
+	document.addEventListener('embed-counter-change', (event) => {
+		alert(`[Host] Counter changed (${event?.detail?.embedName}): ${event?.detail?.count}`);
+	})
+</script>

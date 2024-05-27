@@ -1,9 +1,14 @@
+// @ts-ignore
+import { $counter, counterAdd } from 'http://localhost:9300/counter.js';
+
 export function setupCounter(element: HTMLButtonElement) {
-  let counter = 0
-  const setCounter = (count: number) => {
-    counter = count
-    element.innerHTML = `count is ${counter}`
+  const render = () => {
+    element.innerHTML = `global counter is ${$counter.get()}`
   }
-  element.addEventListener('click', () => setCounter(counter + 1))
-  setCounter(0)
+
+  element.addEventListener('click', counterAdd)
+
+  $counter.subscribe(render)
+
+  render()
 }

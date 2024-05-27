@@ -55,7 +55,6 @@ function injectCodeFunction(cssCode: string, options: InjectCodeOptions) {
       if (rootElement) {
         rootElement.adoptedStyleSheets = [sheet];
 
-        // Create a new event
         const customEvent = new CustomEvent('embed-styles-loaded', {
           bubbles: false,
           composed: false,
