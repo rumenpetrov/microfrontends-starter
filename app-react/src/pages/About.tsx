@@ -3,7 +3,7 @@ import reactLogo from '../assets/react.svg'
 import viteLogo from '/vite.svg'
 import { useStore } from '@nanostores/react';
 // @ts-ignore
-import { $counter, counterAdd } from 'http://localhost:9300/counter.js';
+import { $counter, counterAdd } from 'http://localhost:30300/counter.js';
 
 const About = () => {
   const [count, setCount] = React.useState(0)

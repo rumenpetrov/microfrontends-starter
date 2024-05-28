@@ -1,15 +1,15 @@
 import { version } from 'react'
 // import { lazy, Suspense, version } from 'react'
 // import ReactErrorBoundery from "./error-boundery"
-// import App from "http://localhost:9200/bundle.js?url"
+// import App from "http://localhost:30200/bundle.js?url"
 import { useStore } from '@nanostores/react';
 // @ts-ignore
-import { $counter, counterAdd } from 'http://localhost:9300/counter.js';
+import { $counter, counterAdd } from 'http://localhost:30300/counter.js';
 // @ts-ignore
 import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
 // Lazy load
-// const App = lazy(() => import('http://localhost:9200/bundle.js'));
+// const App = lazy(() => import('http://localhost:30200/bundle.js'));
 
 export const AstroReact = () => {
   const counter = useStore($counter);

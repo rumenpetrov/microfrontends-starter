@@ -1,5 +1,5 @@
 // @ts-ignore
-import { $counter, counterAdd } from 'http://localhost:9300/counter.js';
+import { $counter, counterAdd } from 'http://localhost:30300/counter.js';
 
 export function setupCounter(element: HTMLButtonElement) {
   const render = () => {

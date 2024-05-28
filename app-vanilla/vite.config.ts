@@ -4,7 +4,7 @@ import cssInject from 'vite-plugin-css-injected-by-js';
 
 export default defineConfig({
   preview: {
-    port: 9100,
+    port: 30100,
   },
   build: {
     lib: {

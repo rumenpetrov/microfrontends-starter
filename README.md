@@ -27,6 +27,12 @@ $ npm run preview
 $ npm run dev
 ```
 
+| Port  | Name        |
+| ------| ----------- |
+| 30100 | app-vanilla |
+| 30200 | app-react   |
+| 30300 | stores      |
+
 ### Summary of the main technologies which are used
 * [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM) (could be declarative or over JS API) to encapsulate the application and to isolate styles
 * [Importmap](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap) - Allows using bare module names for dependency and microfrontends imports
