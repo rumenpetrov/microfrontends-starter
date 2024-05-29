@@ -2,7 +2,6 @@
 import Document from '../layouts/document.astro'
 import AstroReact from '../components/react/astro-react.jsx'
 import EmbedAppVanilla from '../components/astro/embed-app-vanilla.astro'
-import EmbedAppReact from '../components/astro/embed-app-react.astro'
 ---
 <Document title="Home">
 	<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi quaerat veniam facere quas corporis, iste cum iure harum quibusdam officiis beatae nisi possimus explicabo maxime porro labore eveniet accusamus quod ullam earum quis perferendis minus doloremque omnis. Suscipit ad quas porro eligendi expedita quis facere excepturi ut nobis omnis molestiae quisquam, repellendus magni, deserunt perspiciatis temporibus? Ut, nulla eaque dignissimos provident enim accusamus eum vel quibusdam quisquam, earum magni cupiditate quos! Fugiat accusamus obcaecati repellat, veritatis modi officia sint doloribus soluta rerum. Facere, quisquam laudantium itaque veniam sit, velit, expedita asperiores debitis ut exercitationem assumenda rem optio eligendi minima sequi.</p>
@@ -13,21 +12,11 @@ import EmbedAppReact from '../components/astro/embed-app-react.astro'
 		</div>
 
 		<div>
-			<EmbedAppReact id="app-react" />
-		</div>
-
-		<div>
-			<EmbedAppReact id="app-react2" />
+			<AstroReact client:only="react"></AstroReact>
 		</div>
 	</div>
 
 	<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi quaerat veniam facere quas corporis, iste cum iure harum quibusdam officiis beatae nisi possimus explicabo maxime porro labore eveniet accusamus quod ullam earum quis perferendis minus doloremque omnis. Suscipit ad quas porro eligendi expedita quis facere excepturi ut nobis omnis molestiae quisquam, repellendus magni, deserunt perspiciatis temporibus? Ut, nulla eaque dignissimos provident enim accusamus eum vel quibusdam quisquam, earum magni cupiditate quos! Fugiat accusamus obcaecati repellat, veritatis modi officia sint doloribus soluta rerum. Facere, quisquam laudantium itaque veniam sit, velit, expedita asperiores debitis ut exercitationem assumenda rem optio eligendi minima sequi.</p>
-
-	<div class="embeds">
-		<div>
-			<AstroReact client:only="react"></AstroReact>
-		</div>
-	</div>
 
 	<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi quaerat veniam facere quas corporis, iste cum iure harum quibusdam officiis beatae nisi possimus explicabo maxime porro labore eveniet accusamus quod ullam earum quis perferendis minus doloremque omnis. Suscipit ad quas porro eligendi expedita quis facere excepturi ut nobis omnis molestiae quisquam, repellendus magni, deserunt perspiciatis temporibus? Ut, nulla eaque dignissimos provident enim accusamus eum vel quibusdam quisquam, earum magni cupiditate quos! Fugiat accusamus obcaecati repellat, veritatis modi officia sint doloribus soluta rerum. Facere, quisquam laudantium itaque veniam sit, velit, expedita asperiores debitis ut exercitationem assumenda rem optio eligendi minima sequi.</p>
 </Document>
@@ -35,7 +24,7 @@ import EmbedAppReact from '../components/astro/embed-app-react.astro'
 <style>
 	.embeds {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 		gap: 8px;
 	}
 </style>
